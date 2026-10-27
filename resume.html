@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neetu Patel - Azure DevOps Engineer Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0078D4;
+      --primary-dark: #005A9E;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --badge-bg: #f1f5f9;
+      --sidebar-bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #eef2f6;
+      color: var(--text);
+      line-height: 1.5;
+      padding: 40px 20px;
+    }
+
+    .resume-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+
+    /* Print & Action Bar */
+    .action-bar {
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-outline:hover {
+      background: #f8fafc;
+    }
+
+    /* Sidebar Column */
+    .sidebar {
+      background: var(--sidebar-bg);
+      padding: 36px 24px;
+      border-right: 1px solid var(--border);
+    }
+
+    .profile-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px auto;
+      display: block;
+      border: 3px solid var(--primary);
+      box-shadow: 0 4px 12px rgba(0, 120, 212, 0.2);
+    }
+
+    .sidebar h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      word-break: break-all;
+    }
+
+    .contact-list i {
+      color: var(--primary);
+      width: 16px;
+      margin-top: 3px;
+    }
+
+    .contact-list a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .contact-list a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .skills-group {
+      margin-bottom: 14px;
+    }
+
+    .skills-group-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      background: #e2e8f0;
+      color: #1e293b;
+      border-radius: 4px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cert-item {
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .cert-title {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .cert-org {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    /* Main Content Column */
+    .main-content {
+      padding: 36px 32px;
+    }
+
+    .header-info {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    .name {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 4px;
+      letter-spacing: 0.2px;
+    }
+
+    .summary-text {
+      font-size: 13.5px;
+      color: #475569;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 24px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title i {
+      color: var(--primary);
+      font-size: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Project & Experience Cards */
+    .item-card {
+      margin-bottom: 18px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .item-subtitle {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .item-date {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .bullet-list {
+      list-style-type: disc;
+      padding-left: 18px;
+      font-size: 12.5px;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    .bullet-list li strong {
+      color: #0f172a;
+    }
+
+    .project-tech {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--primary-dark);
+      background: #eff6ff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    /* Print Specifics */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        max-width: 100%;
+        border-radius: 0;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .resume-container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="action-bar">
+    <a href="../../index.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+    <div style="display: flex; gap: 10px;">
+      <button onclick="window.print()" class="btn btn-primary"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <div class="resume-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="../images/neetu_patel.jpg" alt="Neetu Patel" class="profile-photo">
+      
+      <h3><i class="fa-solid fa-address-card"></i> Contact</h3>
+      <ul class="contact-list">
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>India (Open to Remote / Relocation)</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:patelneetu.devops@gmail.com">patelneetu.devops@gmail.com</a>
+        </li>
+        <li>
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://linkedin.com/in/neetu-patel" target="_blank" rel="noopener">linkedin.com/in/neetu-patel</a>
+        </li>
+        <li>
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/patelneetu10-stack" target="_blank" rel="noopener">github.com/patelneetu10-stack</a>
+        </li>
+      </ul>
+
+      <h3><i class="fa-solid fa-code"></i> Skills Matrix</h3>
+      
+      <div class="skills-group">
+        <div class="skills-group-title">Cloud Infrastructure</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Azure</span>
+          <span class="skill-tag">Azure Virtual Machines</span>
+          <span class="skill-tag">Virtual Networks (VNet)</span>
+          <span class="skill-tag">App Services</span>
+          <span class="skill-tag">Blob Storage</span>
+          <span class="skill-tag">Azure SQL</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-group-title">IaC & Automation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Terraform (HCL)</span>
+          <span class="skill-tag">Modules</span>
+          <span class="skill-tag">Remote State</span>
+          <span class="skill-tag">ARM / Bicep</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-group-title">CI/CD & DevOps</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Azure DevOps</span>
+          <span class="skill-tag">YAML Pipelines</span>
+          <span class="skill-tag">Self-Hosted Runners</span>
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">Git Version Control</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-group-title">Containers & Orchestration</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Kubernetes (AKS)</span>
+          <span class="skill-tag">Helm Charts</span>
+          <span class="skill-tag">Ingress Controllers</span>
+          <span class="skill-tag">ACR</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-group-title">Security & Monitoring</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Azure Key Vault</span>
+          <span class="skill-tag">Managed Identities</span>
+          <span class="skill-tag">Azure Monitor</span>
+          <span class="skill-tag">Log Analytics (KQL)</span>
+          <span class="skill-tag">Linux & Networking</span>
+        </div>
+      </div>
+
+      <h3><i class="fa-solid fa-award"></i> Certifications</h3>
+      <div class="cert-item">
+        <div class="cert-title">Microsoft Certified: Azure DevOps Engineer Expert</div>
+        <div class="cert-org">Microsoft (AZ-400 Track)</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-title">HashiCorp Certified: Terraform Associate</div>
+        <div class="cert-org">HashiCorp</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-title">Microsoft Certified: Azure Fundamentals</div>
+        <div class="cert-org">Microsoft (AZ-900)</div>
+      </div>
+
+      <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+      <div class="cert-item">
+        <div class="cert-title">Bachelor of Technology (B.Tech)</div>
+        <div class="cert-org">Computer Science & Engineering</div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header-info">
+        <h1 class="name">NEETU PATEL</h1>
+        <div class="title">AZURE DEVOPS ENGINEER</div>
+        <p class="summary-text">
+          Dedicated Azure DevOps Engineer with hands-on expertise in architecting highly available Microsoft Azure cloud infrastructure, codifying environments using Terraform, building multi-stage CI/CD pipelines in Azure DevOps, and containerizing microservices on Azure Kubernetes Service (AKS). Passionate about DevSecOps best practices, zero-downtime deployments, and cloud cost governance.
+        </p>
+      </div>
+
+      <!-- Experience -->
+      <section>
+        <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
+        
+        <div class="item-card">
+          <div class="item-header">
+            <div>
+              <div class="item-title">Azure DevOps Engineer</div>
+              <div class="item-subtitle">Cloud Engineering & Automation Services</div>
+            </div>
+            <div class="item-date">2023 - PRESENT</div>
+          </div>
+          <ul class="bullet-list">
+            <li>Architected and managed production infrastructure on <strong>Microsoft Azure</strong> utilizing <strong>Terraform</strong> modules, eliminating configuration drift across Dev, Test, and Prod tiers.</li>
+            <li>Constructed automated multi-stage <strong>Azure DevOps YAML pipelines</strong> integrating code analysis, unit testing, container vulnerability scans, and automated rollbacks.</li>
+            <li>Orchestrated containerized workloads on <strong>Azure Kubernetes Service (AKS)</strong> using Helm, implementing Horizontal Pod Autoscaling (HPA) and NGINX Ingress with automated TLS.</li>
+            <li>Enforced security best practices by integrating <strong>Azure Key Vault CSI driver</strong> for dynamic secret injection, zero-hardcoded secrets, and Managed Identity RBAC policies.</li>
+            <li>Configured centralized observability using <strong>Azure Monitor & Log Analytics</strong>, creating real-time alert rules and KQL dashboards reducing MTTR by 42%.</li>
+          </ul>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">
+            <div>
+              <div class="item-title">Cloud & Systems Associate</div>
+              <div class="item-subtitle">Infrastructure & Platform Operations</div>
+            </div>
+            <div class="item-date">2021 - 2023</div>
+          </div>
+          <ul class="bullet-list">
+            <li>Managed Linux (Ubuntu/CentOS) cloud environments, automated administration tasks with Bash and PowerShell scripting.</li>
+            <li>Maintained enterprise Git repositories, enforced pull request policies, branch protections, and semantic versioning.</li>
+            <li>Configured Azure Virtual Networks, Subnets, Network Security Groups (NSGs), and VPN gateways ensuring strict network segmentation and zero unauthorized ingress.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Key Projects -->
+      <section>
+        <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Highlighted Projects</h2>
+
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title">Healthcare Patient Monitoring System on Azure</div>
+            <div class="item-date">PROJECT LEAD</div>
+          </div>
+          <span class="project-tech">Azure AKS | Terraform | Key Vault | Azure SQL | Azure Monitor</span>
+          <ul class="bullet-list">
+            <li>Designed a HIPAA-compliant real-time patient monitoring platform deployed across multi-zone Azure architecture.</li>
+            <li>Implemented resilient telemetry ingest pipelines capable of processing continuous sensor data streams with sub-100ms latency.</li>
+            <li>Integrated Azure Key Vault for secure patient health record cryptographic keys and strict role-based access control.</li>
+          </ul>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title">Azure Infrastructure Automation using Terraform</div>
+            <div class="item-date">INFRASTRUCTURE AS CODE</div>
+          </div>
+          <span class="project-tech">Terraform | Azure Blob Backend | Modular HCL | GitHub</span>
+          <ul class="bullet-list">
+            <li>Created a reusable, production-ready Terraform module repository provisioning complete Hub-and-Spoke network topologies, bastion hosts, and compute pools.</li>
+            <li>Configured remote state storage with Azure Blob Storage and state lease locking to guarantee safe team concurrency.</li>
+          </ul>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title">Enterprise CI/CD Pipeline with Azure DevOps</div>
+            <div class="item-date">AUTOMATION &amp; RELEASE</div>
+          </div>
+          <span class="project-tech">Azure DevOps | YAML Pipelines | Docker | Azure ACR</span>
+          <ul class="bullet-list">
+            <li>Engineered an automated end-to-end YAML pipeline featuring automated linting, unit testing, container build, security gate scanning, and gated staging-to-prod approvals.</li>
+            <li>Cut build and delivery turnaround time from 45 minutes to under 12 minutes with Docker layer caching.</li>
+          </ul>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title">Kubernetes Application Deployment (AKS)</div>
+            <div class="item-date">CONTAINER ORCHESTRATION</div>
+          </div>
+          <span class="project-tech">Kubernetes (AKS) | Helm | Ingress NGINX | Azure Container Insights</span>
+          <ul class="bullet-list">
+            <li>Packaged microservices architecture into reusable Helm charts with environment-specific values files.</li>
+            <li>Implemented Horizontal Pod Autoscaler (HPA) and cluster autoscaling to handle traffic spikes smoothly while minimizing idle compute costs.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
